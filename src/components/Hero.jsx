@@ -26,7 +26,7 @@ export const Hero = () => {
       window.addEventListener('resize', handleResize);
       setHasResizeListener(true);
     }
-  }, [hasResizeListener]);
+  },[hasResizeListener]);
 
   return (
     <div className="sec-hero">
@@ -35,7 +35,6 @@ export const Hero = () => {
         autoPlay muted loop playsInline poster={videoPoster} src={returnMobileOrDeskVideo()}
       />
       <h1>My Favourite Final Fantasy Games</h1>
-      <h2>Width: {window.innerWidth}</h2>
     </div>
   )
 }

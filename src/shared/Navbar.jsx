@@ -8,8 +8,8 @@ export const pageURLS = {
 }
 
 export const Navbar = ()=> (
-  <nav className="sticky top-0 left-0 w-full flex justify-between">
-    <div>Logo</div>
+  <nav className="sticky top-0 left-0 w-full flex justify-between z-10">
+    <Link to={pageURLS.home}>Logo</Link>
     <ul className="flex">
       <li className="mx-4"><Link to={pageURLS.home}>Home</Link></li>
       <li className="mx-4"><Link to={pageURLS.detailsFFVII}>FFVII Details</Link></li>
