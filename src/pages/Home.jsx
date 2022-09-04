@@ -1,17 +1,16 @@
-import { useEffect, useState } from "react";
-
+import { useEffect, useState, useContext } from "react";
+import { GameContext } from "../context/GameContext";
 import { Hero } from "../components/Hero";
-
-import axios from "axios"
+import axios from "axios";
 
 export const Home = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [gameSelection, setGameSelection] = useState([]);
+
+  const { gameSelection, setGameSelection} = useContext(GameContext);
 
   const filterGames = (rawData) => {
-
     if (rawData !== null) {
       const select = rawData.filter(game => game.title === 'Final Fantasy 03' || game.title === 'Final Fantasy 07' || game.title === 'Final Fantasy 15' );
       setGameSelection(select);
@@ -22,9 +21,7 @@ export const Home = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await axios.get(
-          `https://www.moogleapi.com/api/v1/games`
-        );
+        const response = await axios.get('https://www.moogleapi.com/api/v1/games');
         setData(response.data);
         setError(null);
       } catch (err) {
