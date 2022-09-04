@@ -2,11 +2,16 @@ import { useEffect, useState, useContext } from "react";
 import { GameContext } from "../context/GameContext";
 import { Hero } from "../components/Hero";
 import axios from "axios";
+import { Api } from '../api/fetchApi';
 
 export const Home = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const apiTest = new Api();
+  apiTest.fetch('https://www.moogleapi.com/api/v1/games');
+  console.log('apiTest data:', apiTest.getData());
 
   const { gameSelection, setGameSelection} = useContext(GameContext);
 
