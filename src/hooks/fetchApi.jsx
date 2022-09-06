@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default (apiFunc) => {
   const [data, setData] = useState(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-
+  
   const request = async (...args) => {
     setLoading(true);
     try {
@@ -17,14 +17,13 @@ export default (apiFunc) => {
     }
   };
 
-  const filterGames = (data) => {
+  const filterGames = (data, ff3ID, ff7ID, ff15ID) => {
     if (data !== null) {
       const filteredGames = data.filter(game => 
-        game.title === 'Final Fantasy 03' || 
-        game.title === 'Final Fantasy 07' || 
-        game.title === 'Final Fantasy 15'
+        game.gameId === ff3ID || 
+        game.gameId === ff7ID || 
+        game.gameId === ff15ID
       );
-      console.log('filteredGames:', filteredGames);
       return filteredGames;
     }  
   }
