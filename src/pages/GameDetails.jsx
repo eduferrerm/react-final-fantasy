@@ -1,21 +1,34 @@
 import { useContext } from "react";
 import { GameContext } from "../context/GameContext";
+
+import { LoadingErrorSuccess } from "../components/LoadingErrorSuccess";
 import { GameRow } from "../components/gameRow/GameRow";
 
-export const GameDetails = ({title, selectedGame})=> {
-  const { gameSelection, ffGameIds} = useContext(GameContext);
-  
-  console.log('from detail page:', gameSelection);
+export const GameDetails = ({title, selectedGameID})=> {
 
-  const returnPageGame = (selectedGamesArr) => {
-    const selectedGameID = ffGameIds[selectedGame];
-    return gameSelection.filter(game => game.gameId === selectedGameID );
+  console.log('selectedGameID:', selectedGameID);
+
+  const { getGamesApi, ffGameIds } = useContext(GameContext);
+
+  const returnPageGame = (gamesArr, selectedGameID) => {
+    return gamesArr.filter(game => game.gameId === selectedGameID );
   }
 
   return (
     <>
       <h1>{title}</h1>
-      <GameRow selectedGames={returnPageGame()} selectionGameIds={ffGameIds} isDetailPage={true}/>
+      <LoadingErrorSuccess 
+        loading={getGamesApi.loading} 
+        error={getGamesApi.error} 
+        data={getGamesApi.data}
+      >
+      {getGamesApi.data &&
+        <GameRow 
+          selectedGames={returnPageGame(getGamesApi.data, selectedGameID)} 
+          selectionGameIds={ffGameIds} 
+          isDetailPage={true}/>
+      }
+      </LoadingErrorSuccess>
     </>
-  ) 
+  )
 }

@@ -7,17 +7,19 @@ import ff15Image from '../../assets/img/ffxv-img.jpeg';
 import './gameRow.scss';
 
 export const GameRow = ({selectedGames, selectionGameIds, isDetailPage}) => { 
-  const { detailPages } = useContext(GameContext);
+  const { getGamesApi } = useContext(GameContext);
+
+  console.log('GAME ROW selectionGameIds:', selectionGameIds);
 
   const returnNewImage = (currentIterationID, selectionGameIds, defaultImg) => {
     switch(currentIterationID) {
-      case selectionGameIds.ff3:
+      case getGamesApi.gameDetailPages[0].gameId:
         return ff3Image;
         break;
-      case selectionGameIds.ff7:
+      case getGamesApi.gameDetailPages[1].gameId:
         return ff7Image;
         break;
-      case selectionGameIds.ff15:
+      case getGamesApi.gameDetailPages[2].gameId:
         return ff15Image;
         break;
       default:
@@ -27,27 +29,27 @@ export const GameRow = ({selectedGames, selectionGameIds, isDetailPage}) => {
 
   const returnURL = (currentIterationID, selectionGameIds) => {
     switch(currentIterationID) {
-      case selectionGameIds.ff3:
-        return detailPages[0].url;
+      case getGamesApi.gameDetailPages[0].gameId:
+        return getGamesApi.gameDetailPages[0].url;
         break;
-      case selectionGameIds.ff7:
-        return detailPages[1].url;
+      case getGamesApi.gameDetailPages[1].gameId:
+        return getGamesApi.gameDetailPages[1].url;
         break;
-      case selectionGameIds.ff15:
-        return detailPages[2].url;
+      case getGamesApi.gameDetailPages[2].gameId:
+        return getGamesApi.gameDetailPages[2].url;
         break;
     }
   };
 
   return (
-    <ul className="game-row flex flex-col md:flex-row p-4"> 
+    <ul className="game-row flex flex-col md:flex-row p-4">
       {
         selectedGames.map(({ gameId, picture, title, releaseDate, platform, description }) => (
           <li className={`w-full ${!isDetailPage ? 'md:w-1/3' : 'md:flex'} px-4 py-8`} key={`${gameId}`}>
             <div className={`w-full ${!isDetailPage ? '' : 'md:w-1/2'}`}>
               <img 
                 className={`w-full mb-4`} 
-                src={returnNewImage(gameId, selectionGameIds, picture)}               
+                src={returnNewImage(gameId, picture)}               
                 alt="" 
               />
             </div>
@@ -56,7 +58,7 @@ export const GameRow = ({selectedGames, selectionGameIds, isDetailPage}) => {
               <h3 className="mb-4"><span>{releaseDate}</span> <span className='text-teal-500'>|</span> <span>{platform}</span></h3>
               <p className={`${!isDetailPage ? 'h-32' : ''} overflow-hidden mb-4`}>{description}</p>
               {!isDetailPage &&
-                  <Link to={returnURL(gameId, selectionGameIds)}>Learn More</Link>
+                  <Link to={returnURL(gameId)}>Learn More</Link>
               }
             </div>
           </li>
