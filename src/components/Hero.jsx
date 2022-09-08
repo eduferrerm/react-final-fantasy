@@ -10,8 +10,6 @@ export const Hero = () => {
     height: window.innerHeight,
     width: window.innerWidth
   })
-  
-  const returnMobileOrDeskVideo = () => window.innerWidth < 1200 ? videoMobile : videoDesk;
 
   useEffect(() => {
     const handleResize = () => {
@@ -20,22 +18,24 @@ export const Hero = () => {
         width: window.innerWidth
       })
     }
-
     if (!hasResizeListener) {
       // #NOTE: Debounce
       window.addEventListener('resize', handleResize);
       setHasResizeListener(true);
     }
-  }, [hasResizeListener]);
+  },[hasResizeListener]);
+  
+  const returnMobileOrDeskVideo = () => window.innerWidth < 1200 ? videoMobile : videoDesk;
 
   return (
-    <div className="sec-hero">
+    <section className="relative overflow-hidden h-80">
       <video
-        className='h-full w-full object-cover'
+        className='absolute top-0 left-0 h-full w-full object-cover z-0'
         autoPlay muted loop playsInline poster={videoPoster} src={returnMobileOrDeskVideo()}
       />
-      <h1>My Favourite Final Fantasy Games</h1>
-      <h2>Width: {window.innerWidth}</h2>
-    </div>
+      <div className="relative z-10 w-full h-full flex justify-center items-center">
+        <h1>My Favourite Final Fantasy Games</h1>
+      </div>
+    </section>
   )
 }

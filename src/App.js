@@ -1,44 +1,43 @@
-import { useEffect, useState } from 'react';
-import useFetch from "react-fetch-hook";
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { GameContext } from './context/GameContext'
+import fetchGames from './hooks/fetchGames';
+import './App.css';
 
 import { Home } from './pages/Home'
 import { GameDetails } from './pages/GameDetails'
-import { Navbar, pageURLS } from './shared/Navbar';
-
-import './App.css';
+import { Navbar } from './shared/Navbar';
 
 export default function App() {
+  const getGamesApi = fetchGames();
 
-  const [gameDetailsFF7, setgameDetailsFF7] = useState(null)
-  const [charactersFF7, setcharactersFF7] = useState(null)
-  
-  const { isLoading, gameData, error } = useFetch(
-    "https://www.moogleapi.com/api/v1/games"
-  );
+  useEffect(()=>{
+    getGamesApi.request();
+  },[])
 
   return (
-    <Router>
-      <div className="App bg-slate-900 text-slate-100">
-        <Navbar />
-        <Routes>
-          <Route exact path={pageURLS.home} element={<Home />}></Route>
-          <Route exact path={pageURLS.detailsFFVII} element={<GameDetails title={'FFVII'}/>}></Route>
-        </Routes>
-        {/* <h1>Game Data</h1>
-        {isLoading && <div>Please wait =)...</div>}
-        {error && (
-          <div>{`Opps! something went wrong, error: - ${error}`}</div>
-        )}
-        <ul>
-          {gameData &&
-            gameData.map(({ id, title }) => (
-              <li key={id}>
-                <h3>{title}</h3>
-              </li>
-            ))}
-        </ul> */}
-      </div>
-    </Router>
+    <GameContext.Provider value={{
+      getGamesApi
+    }}>
+      <Router>
+        <div className="App bg-slate-900 text-slate-100">
+          <Navbar />
+          <Routes>
+            <Route exact path="/"element={<Home />}></Route>
+            {getGamesApi.data && 
+              getGamesApi.data.map((game, idx)=> (
+                <Route 
+                  exact 
+                  path={getGamesApi.gameDetailPages[idx].url} 
+                  element={<GameDetails
+                  title={getGamesApi.gameDetailPages[idx].pageTitle} 
+                  selectedGameID={getGamesApi.gameDetailPages[idx].gameId}/>}>
+                </Route>
+              ))
+            }
+          </Routes>
+        </div>
+      </Router>
+    </GameContext.Provider>
   );
 }
