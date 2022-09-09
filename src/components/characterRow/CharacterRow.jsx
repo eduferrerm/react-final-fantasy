@@ -3,12 +3,12 @@ import { CharacterRowImg } from "./CharacterRowImg";
 export const CharacterRow = ({gameCharacters}) => {
   return (
     <section>
-      <h2>Characters with Images | {gameCharacters.length}</h2>
-      <ul className="flex flex-wrap px-4">
+      <h2>Available Characters | {gameCharacters.length}</h2>
+      <ul className="flex flex-wrap">
         {
           gameCharacters.map((character, idx) => (
             <li
-              className="w-1/2 md:w-full max-w-1/4 p-4"
+              className="w-1/2 md:w-full max-w-1/2 md:max-w-1/4 p-4"
               key={character.origin + idx}
             >
               <p>{character.name} | {character.japaneseName}</p>
