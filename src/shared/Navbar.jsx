@@ -6,7 +6,7 @@ export const Navbar = ()=> {
   const { getGamesApi } = useContext(GameContext);
 
   return (
-    <nav className="sticky top-0 left-0 w-full flex justify-between z-10">
+    <nav className="sticky top-0 left-0 w-full flex justify-between z-20">
       <Link to="/">Logo</Link>
       <ul className="flex">
         {
