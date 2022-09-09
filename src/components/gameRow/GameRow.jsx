@@ -6,12 +6,10 @@ import ff7Image from '../../assets/img/ffvii-img.jpeg';
 import ff15Image from '../../assets/img/ffxv-img.jpeg';
 import './gameRow.scss';
 
-export const GameRow = ({selectedGames, selectionGameIds, isDetailPage}) => { 
+export const GameRow = ({selectedGames, isDetailPage}) => { 
   const { getGamesApi } = useContext(GameContext);
-
-  console.log('GAME ROW selectionGameIds:', selectionGameIds);
-
-  const returnNewImage = (currentIterationID, selectionGameIds, defaultImg) => {
+  
+  const returnNewImage = (currentIterationID, defaultImg) => {
     switch(currentIterationID) {
       case getGamesApi.gameDetailPages[0].gameId:
         return ff3Image;
@@ -27,7 +25,7 @@ export const GameRow = ({selectedGames, selectionGameIds, isDetailPage}) => {
     }
   };
 
-  const returnURL = (currentIterationID, selectionGameIds) => {
+  const returnURL = (currentIterationID) => {
     switch(currentIterationID) {
       case getGamesApi.gameDetailPages[0].gameId:
         return getGamesApi.gameDetailPages[0].url;
