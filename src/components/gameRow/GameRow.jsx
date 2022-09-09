@@ -43,8 +43,10 @@ export const GameRow = ({selectedGames, isDetailPage}) => {
     <ul className="game-row flex flex-col md:flex-row p-4">
       {
         selectedGames.map(({ gameId, picture, title, releaseDate, platform, description }) => (
-          <li className={`w-full ${!isDetailPage ? 'md:w-1/3' : 'md:flex'} px-4 py-8`} key={`${gameId}`}>
+          <li className={`w-full ${!isDetailPage ? 'md:w-1/3' : 'md:flex'} py-8 md:px-4`} key={`${gameId}`}>
             <div className={`w-full ${!isDetailPage ? '' : 'md:w-1/2'}`}>
+            <h2 className="mb-2 text-3xl">{title.replace(/0/g, '')}</h2>
+            <h3 className="mb-4"><span>{releaseDate}</span> <span className='text-teal-500'>|</span> <span>{platform}</span></h3>
               <img 
                 className={`w-full mb-4`} 
                 src={returnNewImage(gameId, picture)}               
@@ -52,8 +54,6 @@ export const GameRow = ({selectedGames, isDetailPage}) => {
               />
             </div>
             <div className={`w-full ${!isDetailPage ? '' : 'md:w-1/2'}`}>
-              <h2 className="mb-2 text-3xl">{title.replace(/0/g, '')}</h2>
-              <h3 className="mb-4"><span>{releaseDate}</span> <span className='text-teal-500'>|</span> <span>{platform}</span></h3>
               <p className={`${!isDetailPage ? 'h-32' : ''} overflow-hidden mb-4`}>{description}</p>
               {!isDetailPage &&
                   <Link to={returnURL(gameId)}>Learn More</Link>

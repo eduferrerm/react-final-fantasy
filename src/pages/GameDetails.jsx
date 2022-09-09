@@ -4,6 +4,7 @@ import { GameContext } from "../context/GameContext";
 import { LoadingErrorSuccess } from "../components/LoadingErrorSuccess";
 import { GameRow } from "../components/gameRow/GameRow";
 import { CharacterRow } from "../components/characterRow/CharacterRow";
+import { Wrapper } from "../components/layout/Wrapper";
 
 export const GameDetails = ({title, selectedGameID})=> {
   const { getGamesApi, getCharactersApi } = useContext(GameContext);
@@ -20,29 +21,31 @@ export const GameDetails = ({title, selectedGameID})=> {
 
   return (
     <>
+      <Wrapper>
       <h1>{title} | Details</h1>
-      <LoadingErrorSuccess 
-        loading={getGamesApi.loading} 
-        error={getGamesApi.error} 
-        data={getGamesApi.data}
-        dataType={'game'}
-      >
-      {getGamesApi.data &&
-        <GameRow 
-          selectedGames={returnPageGameOrCharacter(getGamesApi.data, true, selectedGameID)}
-          isDetailPage={true}/>
-      }
-      </LoadingErrorSuccess>
-      <LoadingErrorSuccess 
-        loading={getCharactersApi.loading} 
-        error={getCharactersApi.error} 
-        data={getCharactersApi.data}
-        dataType={'character'}
-      >
-      {getCharactersApi.data &&
-        <CharacterRow gameCharacters={returnPageGameOrCharacter(getCharactersApi.data, false, title)}/>
-      }
-      </LoadingErrorSuccess>
+        <LoadingErrorSuccess 
+          loading={getGamesApi.loading} 
+          error={getGamesApi.error} 
+          data={getGamesApi.data}
+          dataType={'game'}
+        >
+        {getGamesApi.data &&
+          <GameRow 
+            selectedGames={returnPageGameOrCharacter(getGamesApi.data, true, selectedGameID)}
+            isDetailPage={true}/>
+        }
+        </LoadingErrorSuccess>
+        <LoadingErrorSuccess 
+          loading={getCharactersApi.loading} 
+          error={getCharactersApi.error} 
+          data={getCharactersApi.data}
+          dataType={'character'}
+        >
+        {getCharactersApi.data &&
+          <CharacterRow gameCharacters={returnPageGameOrCharacter(getCharactersApi.data, false, title)}/>
+        }
+        </LoadingErrorSuccess>
+      </Wrapper>
     </>
   )
 }
