@@ -1,10 +1,11 @@
 export const LoadingErrorSuccess = (props) => {
   const loading = props.loading;
   const error = props.error;
+  const dataType = props.dataType;
 
   if (loading) {
     return (
-      <div className="text-center">Loading game data! please wait...</div>
+      <div className="text-center">Loading {dataType} data! please wait...</div>
     )
   } else if (error) {
       return (
