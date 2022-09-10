@@ -3,7 +3,7 @@ import './characterRow.scss'
 
 export const CharacterRowImg = ({src, name}) => (
   <img 
-    className='character-row__img'
+    className='character-row__img my-4'
     src={src !== undefined 
       ? src.url 
       : unkownCharacterImage
