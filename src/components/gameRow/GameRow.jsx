@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import { GameContext } from "../../context/GameContext";
 import { Link } from 'react-router-dom';
-import ff3Image from '../../assets/img/ffiii-img.jpeg';
-import ff7Image from '../../assets/img/ffvii-img.jpeg';
-import ff15Image from '../../assets/img/ffxv-img.jpeg';
+import ff3Image from '../../assets/img/ff-3/ff-3-game-img-1.jpeg';
+import ff7Image from '../../assets/img/ff-7/ff-7-game-img-1.jpeg';
+import ff15Image from '../../assets/img/ff-15/ff-15-game-img-1.jpeg';
 import './gameRow.scss';
 
 export const GameRow = ({selectedGames, isDetailPage}) => { 
