@@ -1,0 +1,16 @@
+.hero {
+  min-height: 85vh;
+  
+  .hero-texture {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    bottom: -3px;
+    left: 0;
+    z-index: 20;
+  }
+  
+  video {
+    height: 85vh;
+  }
+}
