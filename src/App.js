@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { GameContext } from './context/GameContext'
 import fetchGames from './hooks/fetchGames';
@@ -16,7 +16,6 @@ export default function App() {
   useEffect(()=>{
     getGamesApi.request();
     getCharactersApi.request();
-    // getCharactersApi.logData();
   },[])
 
   return (
