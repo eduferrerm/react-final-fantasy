@@ -1,4 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;700&display=swap');
 @tailwind base;
+
+/* 
+  Horrified this is how tailwind says to do this, 
+  Dad, time to start over, send the UFO's...
+
+  - Jesus H. Christ 
+*/
+
+a {
+  color: white;
+  text-decoration-color: theme('colors.teal.500');
+}
+
 @tailwind components;
 @tailwind utilities;
