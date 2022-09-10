@@ -9,6 +9,8 @@ export const Navbar = ()=> {
   const { getGamesApi } = useContext(GameContext);
   const [menuIsHidden, setMenuIsHidden] = useState(true)
   const [hasResizeListener, setHasResizeListener] = useState(false)
+  const [hasScrollListener, setHasScrollListener] = useState(false)
+  const [userTopPage, setUserTopPage] = useState(false)
   const [dimensions, setDimensions] = useState({
     height: window.innerHeight,
     width: window.innerWidth
@@ -29,8 +31,24 @@ export const Navbar = ()=> {
     }
   },[hasResizeListener]);
 
+  useEffect(()=>{
+    if (hasResizeListener) { return }
+    window.addEventListener('scroll', () => { checkIfScroll()});  
+    setHasScrollListener(true)
+  },[])
+
+  const checkIfScroll = () => {
+    if (window.scrollY > 0) {
+      setUserTopPage(true)
+    } else {
+      setUserTopPage(false)
+    }
+  }
+  
+  window.addEventListener('scroll', () => { checkIfScroll()});
+
   return (
-    <nav className="sticky top-0 left-0 w-full z-20 p-4">
+    <nav className={`${!userTopPage ? 'absolute' : 'fixed bg-slate-900'} top-0 left-0 w-full z-40 p-4`}>
       <div className='flex w-full max-w-screen-xl mx-auto'>  
         <Link className='mr-auto' to="/">
           <img src={navLogo} alt="" className="h-12 w-auto"  />
@@ -56,7 +74,7 @@ export const Navbar = ()=> {
             })
           }
         </ul>
-        <button className='absolute top-2 right-2 lg:hidden z-30' onClick={() => setMenuIsHidden(!menuIsHidden)}>
+        <button className='absolute w-10 top-5 right-2 lg:hidden z-30' onClick={() => setMenuIsHidden(!menuIsHidden)}>
           <img className='icon-menu' src={hamburgerIcon} alt="" />
         </button>
       </div>
