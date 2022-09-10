@@ -46,7 +46,7 @@ export const GameRow = ({selectedGames, isDetailPage}) => {
           selectedGames.map(({ gameId, picture, title, releaseDate, platform, description }) => (
             <li className={`w-full ${!isDetailPage ? 'md:w-1/3' : 'md:flex'} py-8 md:px-4`} key={`${gameId}`}>
               <div className={`w-full ${!isDetailPage ? '' : 'md:w-1/2'}`}>
-                <h2 className="mb-2 text-3xl text-slate-400">{title.replace(/0/g, '')}</h2>
+                <h2 className="mb-2 text-2xl lg:text-3xl text-slate-400">{title.replace(/0/g, '')}</h2>
                 <h3 className="mb-4 text-xs">
                   <span>{releaseDate}</span>
                   <span className='text-teal-500 mx-2'>|</span>
@@ -55,7 +55,7 @@ export const GameRow = ({selectedGames, isDetailPage}) => {
                 <img className={`w-full mb-4`} src={returnNewImage(gameId, picture)} alt=""/>
               </div>
               <div className={`w-full ${!isDetailPage ? '' : 'md:w-1/2'}`}>
-                <p className={`${!isDetailPage ? 'h-32' : ''} overflow-hidden mb-4`}>{description}</p>
+                <p className="mb-4">{description}</p>
                 {!isDetailPage &&
                   <Button url={returnURL(gameId)} text={"learn more"}></Button>
                 }

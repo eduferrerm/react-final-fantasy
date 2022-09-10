@@ -13,7 +13,7 @@ export const CharacterRow = ({gameCharacters}) => {
     <>
       <section>
         <header>
-          <h2 className="mb-4">Available Characters <span className="text-teal-500 inline-block mx-4">|</span> {gameCharacters.length}</h2>
+          <h2 className="mb-4">Total Available Characters <span className="text-teal-500 inline-block mx-4">|</span> {gameCharacters.length}</h2>
         </header>
         <input 
           className="text-blue-900 rounded-sm h-10 w-full md:max-w-sm pl-4 mb-8" 
