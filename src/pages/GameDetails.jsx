@@ -20,9 +20,11 @@ export const GameDetails = ({title, selectedGameID})=> {
   }
 
   return (
-    <>
+    <main className="pt-32">
       <Wrapper>
-      <h1>{title} | Details</h1>
+        <div className="py-10">
+          <h1>{title} | Details</h1>
+        </div>
         <LoadingErrorSuccess 
           loading={getGamesApi.loading} 
           error={getGamesApi.error} 
@@ -46,6 +48,6 @@ export const GameDetails = ({title, selectedGameID})=> {
         }
         </LoadingErrorSuccess>
       </Wrapper>
-    </>
+    </main>
   )
 }

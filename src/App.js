@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { GameContext } from './context/GameContext'
 import fetchGames from './hooks/fetchGames';
@@ -16,7 +16,6 @@ export default function App() {
   useEffect(()=>{
     getGamesApi.request();
     getCharactersApi.request();
-    // getCharactersApi.logData();
   },[])
 
   return (
@@ -25,7 +24,7 @@ export default function App() {
       getCharactersApi
     }}>
       <Router>
-        <div className="App bg-slate-900 text-slate-100 overflow-hidden">
+        <div className="App text-slate-100 overflow-hidden">
           <Navbar />
           <Routes>
             <Route exact path="/"element={<Home />}></Route>
