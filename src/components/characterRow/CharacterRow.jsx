@@ -32,7 +32,7 @@ export const CharacterRow = ({gameCharacters}) => {
           {filteredArray.length > 0 
             ? filteredArray.map((character, idx, array) => (<CharacterRowItem key={character.origin + idx} characterData={character}/>))
             : <div className="w-full h-20 flex justify-center items-center p-20">
-                <p className="text-center">No results found for term:<br></br><span className="text-teal-500 inline-block text-xl "> {filterValue}</span></p>
+                <p className="text-center">😔<br></br>Unfortunately,<br></br>no results were found for term:<br></br><span className="text-teal-500 inline-block text-xl "> {filterValue}</span></p>
               </div>
           }
         </ul>
