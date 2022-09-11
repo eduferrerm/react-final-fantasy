@@ -1,13 +1,12 @@
 export const ExternalButton = ({url, icon, text, additionalClasses}) => (
-  <a className={
-    `
+  <a className={`
     uppercase
+    font-cond
     inline-flex justify-center items-center 
     text-white text-sm tracking-wider hover:gray-900
     border-2 border-white
     h-10 rounded-sm py-2 px-4 font-medium
-    ${additionalClasses? additionalClasses : ''}
-    `
+    ${additionalClasses? additionalClasses : ''}`
   }
     href={url}
     target="_blank"

@@ -1,20 +1,14 @@
 
-import { useEffect } from "react";
-
 import { Wrapper } from "../layout/Wrapper";
 import { ExternalButton } from "../ui/button/ExternalButton";
 import logoAmazon from '../../assets/img/icons/amazon.svg'
 
-export const BuyGame = ({buyGameData, selectedIndex, selectedID}) => {
-  
-  console.log({selectedID});
-  console.log({buyGameData});
-  console.log({selectedIndex});
-  
-  useEffect(()=>{
-    console.log({selectedIndex});
-  },[selectedID]);
+import ff3Img from '../../assets/img/ff-3/ff-3-cover.png'
+import ff7Img from '../../assets/img/ff-7/ff-7-cover.png'
+import ff15Img from '../../assets/img/ff-15/ff-15-cover.png'
 
+export const BuyGame = ({buyGameData, selectedIndex}) => {
+  const gameCoverImages = [ff3Img, ff7Img, ff15Img];
   return (
     <section className="sec-buy-game full-width bg-slate-900 py-32">
       <Wrapper>
@@ -33,7 +27,15 @@ export const BuyGame = ({buyGameData, selectedIndex, selectedID}) => {
             </div>
           </div>
           }
-          <ExternalButton url={buyGameData[selectedIndex].urlAmazon} icon={logoAmazon} text={'Buy the game'} />
+          <div className="flex flex-col-reverse sm:flex-row justify-center items-center">
+            <span>
+              <img className="w-60 sm:w-72" src={gameCoverImages[selectedIndex]} alt="" />
+            </span>
+            <span className="flex sm:flex-col justify-center items-center mb-8 pl-8">
+              <h4 className="font-cond text-3xl sm:mb-8 text-center sm:text-left">Starting at: ${buyGameData[selectedIndex].price}</h4>
+              <ExternalButton url={buyGameData[selectedIndex].urlAmazon} icon={logoAmazon} text={'Buy the game'} />
+            </span>
+          </div>
         </div>
       </Wrapper>
     </section>
