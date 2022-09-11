@@ -2,12 +2,17 @@ import { useEffect, useState } from "react";
 import { CharacterRowItem } from "./CharacterRowItem";
 
 export const CharacterRow = ({gameCharacters}) => {
-  const [filterName, setFilterName] = useState('')
+  const [filterValue, setfilterValue] = useState('')
   const [filteredArray, setFilteredArray] = useState(gameCharacters)
 
   useEffect(()=>{
-    setFilteredArray(gameCharacters.filter((character) => character.name.toLowerCase().includes(filterName.toLowerCase())))
-  },[filterName])
+    setFilteredArray(gameCharacters.filter((character) => character.name.toLowerCase().includes(filterValue.toLowerCase())))
+  },[filterValue])
+
+  useEffect(()=>{
+    setFilteredArray(gameCharacters);
+    setfilterValue('');
+  },[gameCharacters])
 
   return (
     <>
@@ -18,8 +23,8 @@ export const CharacterRow = ({gameCharacters}) => {
         <input 
           className="text-blue-900 rounded-sm h-10 w-full md:max-w-sm pl-4 mb-8" 
           type="text"
-          value={filterName}
-          onChange={(ev) => setFilterName(ev.target.value)}
+          value={filterValue}
+          onChange={(ev) => setfilterValue(ev.target.value)}
         />
       </section>
       <section>
@@ -27,7 +32,7 @@ export const CharacterRow = ({gameCharacters}) => {
           {filteredArray.length > 0 
             ? filteredArray.map((character, idx, array) => (<CharacterRowItem key={character.origin + idx} characterData={character}/>))
             : <div className="w-full h-20 flex justify-center items-center p-20">
-                <p className="text-center">No results found for term:<br></br><span className="text-teal-500 inline-block text-xl "> {filterName}</span></p>
+                <p className="text-center">No results found for term:<br></br><span className="text-teal-500 inline-block text-xl "> {filterValue}</span></p>
               </div>
           }
         </ul>
