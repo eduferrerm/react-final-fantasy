@@ -14,7 +14,7 @@ export const Home = () => {
   return (
     <>
       <Hero />
-      <div className="bg-slate-800 w-full">
+      <main className="bg-slate-800 w-full min-h-screen">
         <LoadingErrorSuccess 
           loading={getGamesApi.loading} 
           error={getGamesApi.error} 
@@ -28,7 +28,7 @@ export const Home = () => {
           }
         </LoadingErrorSuccess>
         <Composers composersData={CONTENT.COMPOSERS}/>
-      </div>
+      </main>
     </>
   )
 }

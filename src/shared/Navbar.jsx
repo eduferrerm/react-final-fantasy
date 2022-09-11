@@ -69,9 +69,13 @@ export const Navbar = ()=> {
           ml-auto z-20`}
         >
           {
-            getGamesApi.gameDetailPages.map(({url, navTitle})=>{
-              return <li className="text-teal-400 underline text-2xl lg:text-base mb-8 lg:mb-0 mx-4 flex justify-between items-center" key={`${url}${navTitle}`}><Link to={url} onClick={() => setMenuIsHidden(true)}>{navTitle}</Link></li>
-            })
+            getGamesApi.gameDetailPages.map(({url, navTitle})=> (
+             <li className="text-teal-400 underline text-2xl lg:text-base mb-8 lg:mb-0 mx-4 flex justify-between items-center" key={`${url}${navTitle}`}>
+                <Link to={url} onClick={() => setMenuIsHidden(true)}>
+                  {navTitle}
+                </Link>
+              </li>
+            ))
           }
         </ul>
         <button className='absolute w-10 top-5 right-2 lg:hidden z-30' onClick={() => setMenuIsHidden(!menuIsHidden)}>

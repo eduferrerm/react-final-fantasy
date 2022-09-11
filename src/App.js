@@ -8,6 +8,7 @@ import './App.css';
 import { Home } from './pages/Home'
 import { GameDetails } from './pages/GameDetails'
 import { Navbar } from './shared/Navbar';
+import { Footer } from './shared/Footer';
 
 export default function App() {
   const getGamesApi = fetchGames();
@@ -41,6 +42,9 @@ export default function App() {
               ))
             }
           </Routes>
+          {!getGamesApi.loading &&
+            <Footer />
+          }
         </div>
       </Router>
     </GameContext.Provider>
