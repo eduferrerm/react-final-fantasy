@@ -5,6 +5,7 @@ export const PageButton = ({text, url, icon}) => {
     <Link to={url} 
       className="
       uppercase
+      font-cond
       inline-flex justify-center items-center 
       text-slate-800 text-sm font-semibold tracking-wider
       bg-teal-500

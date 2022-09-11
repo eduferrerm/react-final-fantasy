@@ -48,7 +48,7 @@ export const GameDetails = ({title, selectedGameID})=> {
     <main className="pt-32">
       <Wrapper>
         <div className="py-10">
-          <h1>{title} | Details</h1>
+          <h1 className="font-cond text-lg text-teal-500">{title} | Details</h1>
         </div>
         <LoadingErrorSuccess 
           loading={getGamesApi.loading} 
