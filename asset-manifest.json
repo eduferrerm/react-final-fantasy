@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/react-final-fantasy/static/css/main.7dea893d.css",
+    "main.js": "/react-final-fantasy/static/js/main.32fc484c.js",
+    "static/js/787.14fe134e.chunk.js": "/react-final-fantasy/static/js/787.14fe134e.chunk.js",
+    "static/media/desktop.webm": "/react-final-fantasy/static/media/desktop.35d1caf9e853e84f37eb.webm",
+    "static/media/mobile.webm": "/react-final-fantasy/static/media/mobile.ecc84577e7a1ba97c563.webm",
+    "static/media/bg-texture.jpg": "/react-final-fantasy/static/media/bg-texture.67a54e1a0579b95d540d.jpg",
+    "static/media/nobuo-img.jpg": "/react-final-fantasy/static/media/nobuo-img.4c4028feec659d4b53e5.jpg",
+    "static/media/ff-3-cover.png": "/react-final-fantasy/static/media/ff-3-cover.4469a3733101130251ee.png",
+    "static/media/ff-7-cover.png": "/react-final-fantasy/static/media/ff-7-cover.1da29aa19f57464b2e09.png",
+    "static/media/ff-15-cover.png": "/react-final-fantasy/static/media/ff-15-cover.c8d51f20c251f4ca02d3.png",
+    "static/media/paper-texture.png": "/react-final-fantasy/static/media/paper-texture.d9f4415567a87e5ce866.png",
+    "static/media/shimomura-img.jpg": "/react-final-fantasy/static/media/shimomura-img.9269a2ff8b11729fe0cf.jpg",
+    "static/media/ff-3-game-img-1.jpeg": "/react-final-fantasy/static/media/ff-3-game-img-1.0ed2d60732a38c15cf0f.jpeg",
+    "static/media/ff-7-game-img-1.jpeg": "/react-final-fantasy/static/media/ff-7-game-img-1.eae83edb8fb907be2038.jpeg",
+    "static/media/poster.jpg": "/react-final-fantasy/static/media/poster.d9ae0f53b78ff2a0158e.jpg",
+    "static/media/ff-15-game-img-1.jpeg": "/react-final-fantasy/static/media/ff-15-game-img-1.60c423f804ca951502e9.jpeg",
+    "static/media/avatar.png": "/react-final-fantasy/static/media/avatar.b8ba545172cd92553bee.png",
+    "static/media/logo-statement.svg": "/react-final-fantasy/static/media/logo-statement.849aa3f2c89afe8de91df27dce42f887.svg",
+    "static/media/ff-logo.svg": "/react-final-fantasy/static/media/ff-logo.6ff51c77652389543c1d297d2fcd82a9.svg",
+    "static/media/instagram.svg": "/react-final-fantasy/static/media/instagram.41aef2b19518e6289cc3473829a4ea6e.svg",
+    "static/media/amazon.svg": "/react-final-fantasy/static/media/amazon.d164def2b98b0f9c456962e1035a7ca4.svg",
+    "static/media/spotify.svg": "/react-final-fantasy/static/media/spotify.d0820f3dfdc76a58cd1c6a984c7bbfd6.svg",
+    "static/media/linkedin.svg": "/react-final-fantasy/static/media/linkedin.029d1db1bfcba4ac5b201508d72726e3.svg",
+    "static/media/wikipedia-w.svg": "/react-final-fantasy/static/media/wikipedia-w.aaa3e755b2201db044c02d7709c36fbd.svg",
+    "index.html": "/react-final-fantasy/index.html",
+    "static/media/bars-solid.svg": "/react-final-fantasy/static/media/bars-solid.253f0bd5ee78d60d241a93a78c0f98d1.svg",
+    "main.7dea893d.css.map": "/react-final-fantasy/static/css/main.7dea893d.css.map",
+    "main.32fc484c.js.map": "/react-final-fantasy/static/js/main.32fc484c.js.map",
+    "787.14fe134e.chunk.js.map": "/react-final-fantasy/static/js/787.14fe134e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7dea893d.css",
+    "static/js/main.32fc484c.js"
+  ]
+}
