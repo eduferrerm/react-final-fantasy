@@ -1,7 +1,4 @@
-import { useEffect } from "react";
-
 import { Wrapper } from "../../layout/Wrapper";
-import { SpotifyPlayer } from "../SpotifyEmbed"
 import { ComposerMapDetails } from "./ComposerMapDetails";
 import { ExternalButton } from "../../ui/button/ExternalButton";
 
@@ -14,7 +11,7 @@ export const Composers = ({composersData}) => {
   const composerImages = [nobuoImg, shimomuraImg];
 
   return (
-    <section className="bg-slate-800 w-full">
+    <section className="bg-slate-800 w-full py-32">
       <Wrapper>
         <h2>{composersData.title}</h2>
         <h3>{composersData.subtitle}</h3>
