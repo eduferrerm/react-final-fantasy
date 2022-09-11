@@ -7,11 +7,11 @@ export const CharacterRowItem = ({characterData}) => {
       <p className="text-teal-500 text-md leading-tight font-bold">{characterData.name}</p>
       <p className="text-slate-500 text-xs">{characterData.japaneseName ? characterData.japaneseName : "???"}</p>
       <CharacterRowImg src={characterData.pictures[0]} name={characterData.name}/>
-      <p className="mb-1"><span className="text-slate-400">Race:</span> {characterData.race}</p>
-      <p className="mb-1"><span className="text-slate-400">Gender:</span> {characterData.gender}</p>
-      <p className="mb-1"><span className="text-slate-400">Age:</span> {characterData.age}</p>
-      <p className="mb-1"><span className="text-slate-400">Height:</span> {characterData.height}</p>
-      <p className="mb-1"><span className="text-slate-400">Job:</span> {characterData.job}</p>
+      <p className="mb-1"><span className="font-libre text-slate-400">Race:</span> {characterData.race}</p>
+      <p className="mb-1"><span className="font-libre text-slate-400">Gender:</span> {characterData.gender}</p>
+      <p className="mb-1"><span className="font-libre text-slate-400">Age:</span> {characterData.age}</p>
+      <p className="mb-1"><span className="font-libre text-slate-400">Height:</span> {characterData.height}</p>
+      <p className="mb-1"><span className="font-libre text-slate-400">Job:</span> {characterData.job}</p>
     </li>
   )
 }

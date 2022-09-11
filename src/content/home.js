@@ -3,8 +3,8 @@ export const CONTENT = {
     title: 'My favourite Final Fantasy Games',    
   },
   COMPOSERS: {
-    title: 'A great part of why i love these games',
-    subtitle: 'Music: The soul of video games',
+    title: 'Music: The soul of video games',
+    subtitle: 'A significant part of why i love these games',
     items: [
       {
         name: 'Nobuo Uematsu',

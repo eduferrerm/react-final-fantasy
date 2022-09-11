@@ -47,25 +47,25 @@ export const GameRow = ({selectedGames, isDetailPage}) => {
 
   return (
     <section className="bg-slate-800 w-full relative z-10">
-      <Wrapper>
-        <ul className="game-row flex flex-col md:flex-row">
+      
+        <ul className="game-row flex flex-col md:flex-row mx-auto max-w-screen-xl">
           {
             selectedGames.map(({ gameId, picture, title, releaseDate, platform, description }) => (
               <li 
-                className={`w-full ${!isDetailPage ? 'md:w-1/3 rounded-md bg-gray-600 border border-slate-400' : ''} 
-                p-4 py-10 md:px-4 mb-14 md:mb-0 md:mx-2`} key={`${gameId}`}
+                className={`w-full ${!isDetailPage ? 'md:w-1/3 rounded-md bg-gray-600 border border-slate-400 p-4' : ''} 
+                py-10 md:px-4 mb-14 md:mb-0 md:mx-2`} key={`${gameId}`}
               >
                 <div className="w-full">
-                  <h2 className="font-libre font-bold mb-2 text-3xl lg:text-6xl uppercase text-white">{title.replace(/0/g, '')}</h2>
-                  <h3 className="mb-4 text-xs">
+                  <h2 className={`${!isDetailPage ? 'text-3xl sm:text-2xl' : 'text-3xl lg:text-6xl'} font-libre font-bold mb-2 uppercase text-white`}>{title.replace(/0/g, '')}</h2>
+                  <h3 className="font-cond mb-8 sm:text-lg">
                     <span>{releaseDate}</span>
                     <span className='text-teal-500 mx-2'>|</span>
                     <span>{platform}</span>
                   </h3>
                   <img className={`w-full mb-4`} src={returnNewImage(gameId, picture)} alt=""/>
                 </div>
-                <div className="w-full md:px-10">
-                  <p className={`${isDetailPage ? '' : 'ellipsed-text'} pt-8 sm:text-lg sm:leading-7`}>{description}</p>
+                <div className={`${!isDetailPage ? '' : 'md:px-10' } w-full`}>
+                  <p className={`${!isDetailPage ? 'ellipsed-text' : 'pt-8'} sm:text-lg sm:leading-7`}>{description}</p>
                   {!isDetailPage &&
                     <Button url={returnURL(gameId)} text={"learn more"} toPage={true}></Button>
                   }
@@ -74,7 +74,7 @@ export const GameRow = ({selectedGames, isDetailPage}) => {
             ))
           }
         </ul>
-      </Wrapper>
+      
     </section>
   )
 };
