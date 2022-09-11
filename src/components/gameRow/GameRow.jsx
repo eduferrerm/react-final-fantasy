@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { GameContext } from "../../context/GameContext";
-import { Wrapper } from "../layout/Wrapper";
 import { Button } from "../ui/button/Button";
 import ff3Image from '../../assets/img/ff-3/ff-3-game-img-1.jpeg';
 import ff7Image from '../../assets/img/ff-7/ff-7-game-img-1.jpeg';

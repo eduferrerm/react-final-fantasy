@@ -10,7 +10,7 @@ export const ExternalButton = ({url, icon, text, additionalClasses}) => (
   }
     href={url}
     target="_blank"
-    rel="nofollow noopener"
+    rel="nofollow noopener noreferrer"
   >
     {icon &&
       <img className="h-6 w-auto mr-4" src={icon} alt="" />

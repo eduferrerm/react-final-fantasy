@@ -1,7 +1,5 @@
-import { useEffect, useState, useContext } from "react";
-import { GameContext } from "../context/GameContext";
+import { useEffect, useState } from "react";
 
-import ffLogo from '../assets/img/logos/ff-logo.svg';
 import brand from '../assets/img/eekfm-brand/logo-statement.svg';
 import avatar from '../assets/img/eekfm-brand/avatar.png';
 import linkedin from '../assets/img/icons/linkedin.svg';
@@ -9,7 +7,7 @@ import instagram from '../assets/img/icons/instagram.svg';
 
 export const Footer = ()=> {
   const [year, setYear] = useState('')
-  const {getGamesApi} = useContext(GameContext)
+
   useEffect(()=>{
     setYear(new Date().getFullYear())
   },[])
@@ -17,9 +15,6 @@ export const Footer = ()=> {
   return (
     <footer className="bg-slate-900 w-full">
       <div className="flex flex-col sm:flex-row px-4 py-16 justify-between items-center">
-        {/* <div className="pr-4">
-          <img className="h-16 w-auto" src={ffLogo} alt="" />
-        </div> */}
         <div className="pr-4">
           <span className="flex">
             <img className="h-16 w-auto pr-4" src={avatar} alt="" />
@@ -28,10 +23,10 @@ export const Footer = ()=> {
         </div>
         <div className="pr-4 pt-8 md:pt-0">
             <span className="flex">
-              <a className="p-2" href="https://www.linkedin.com/in/ekferrerm/" target="_blank" rel="nofollow noopener">
+              <a className="p-2" href="https://www.linkedin.com/in/ekferrerm/" target="_blank" rel="nofollow noopener noreferrer">
                 <img className="h-8 w-8" src={linkedin} alt="" />
               </a>
-              <a className="p-2" href="https://www.instagram.com/p/BLCFRH7BVCM/" target="_blank" rel="nofollow noopener">
+              <a className="p-2" href="https://www.instagram.com/p/BLCFRH7BVCM/" target="_blank" rel="nofollow noopener noreferrer">
                 <img className="h-8 w-8" src={instagram} alt="" />
               </a>
             </span>
