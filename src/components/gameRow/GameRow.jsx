@@ -50,7 +50,7 @@ export const GameRow = ({selectedGames, isDetailPage}) => {
               rounded-md bg-gray-600 border border-slate-400 md:mx-2`} key={`${gameId}`}
               >
                 <div className={`w-full ${!isDetailPage ? '' : 'md:w-1/2'}`}>
-                  <h2 className="mb-2 text-2xl lg:text-3xl text-teal-500">{title.replace(/0/g, '')}</h2>
+                  <h2 className="font-libre font-bold mb-2 text-3xl lg:text-3xl text-white">{title.replace(/0/g, '')}</h2>
                   <h3 className="mb-4 text-xs">
                     <span>{releaseDate}</span>
                     <span className='text-teal-500 mx-2'>|</span>

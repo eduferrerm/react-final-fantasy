@@ -5,8 +5,7 @@ import videoDesk from '../../assets/video/desktop.webm'
 import videoPoster from '../../assets/video/poster.jpg'
 import videoMobile from '../../assets/video/mobile.webm'
 import heroTexture from '../../assets/img/hero/paper-texture.png'
-import avatar from '../../assets/img/eekfm-brand/avatar.png'
-import brand from '../../assets/img/eekfm-brand/brand.svg'
+import brand from '../../assets/img/eekfm-brand/logo-statement.svg'
 
 export const Hero = () => {
   const [hasResizeListener, setHasResizeListener] = useState(false)
@@ -32,19 +31,18 @@ export const Hero = () => {
   const returnMobileOrDeskVideo = () => window.innerWidth < 1200 ? videoMobile : videoDesk;
 
   return (
-    <section className="hero relative overflow-hidden h-80">
+    <section className="hero relative overflow-hidden h-8 p-4">
       <video
         className='fixed top-0 left-0 w-full object-cover z-0'
         autoPlay muted loop playsInline poster={videoPoster} src={returnMobileOrDeskVideo()}
       />
-      <div className="relative z-30 w-full h-full flex flex-col justify-center items-center">
-        <h1>
-          <span className='flex w-full p-4'>
-            <img className='w-20 md:w-32 h-auto' src={avatar} alt="EEKFM Web Design & Development" />
-            <img className='ml-4 w-2/3' src={brand} alt="EEKFM Web Design & Development" />
-          </span>
-        </h1>
-        <h2 className='text-green-900'>My Favourite Final Fantasy Games</h2>
+      <div className="relative z-30 w-full max-w-3/4 h-full flex flex-col justify-center sm:items-center mx-auto">
+        <div>
+          <h1>
+              <img className='w-full' src={brand} alt="EEKFM Web Design & Development" />
+          </h1>
+          <h2 className='text-teal-500'>My Favourite Final Fantasy Games</h2>
+        </div>
       </div>
       <img className="hero-texture" src={heroTexture} alt="" />
     </section>
