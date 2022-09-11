@@ -24,7 +24,7 @@ export default function App() {
       getCharactersApi
     }}>
       <Router>
-        <div className="App bg-slate-800 text-slate-100 overflow-hidden">
+        <div className="App text-slate-100 overflow-hidden">
           <Navbar />
           <Routes>
             <Route exact path="/"element={<Home />}></Route>
