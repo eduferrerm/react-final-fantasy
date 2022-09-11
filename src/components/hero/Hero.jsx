@@ -33,7 +33,7 @@ export const Hero = () => {
   return (
     <section className="hero relative overflow-hidden h-8 p-4">
       <video
-        className='fixed top-0 left-0 w-full object-cover z-0'
+        className='fixed top-0 left-0 w-full object-cover'
         autoPlay muted loop playsInline poster={videoPoster} src={returnMobileOrDeskVideo()}
       />
       <div className="relative z-30 w-full max-w-3/4 h-full flex flex-col justify-center sm:items-center mx-auto">
