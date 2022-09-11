@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { GameContext } from "../../context/GameContext";
 import { Wrapper } from "../layout/Wrapper";
-import { Button } from "../ui/Button";
+import { Button } from "../ui/button/Button";
 import ff3Image from '../../assets/img/ff-3/ff-3-game-img-1.jpeg';
 import ff7Image from '../../assets/img/ff-7/ff-7-game-img-1.jpeg';
 import ff15Image from '../../assets/img/ff-15/ff-15-game-img-1.jpeg';
@@ -61,7 +61,7 @@ export const GameRow = ({selectedGames, isDetailPage}) => {
                 <div className={`w-full ${!isDetailPage ? '' : 'md:w-1/2 md:px-10'}`}>
                   <p className={`${isDetailPage ? '' : 'ellipsed-text'}`}>{description}</p>
                   {!isDetailPage &&
-                    <Button url={returnURL(gameId)} text={"learn more"}></Button>
+                    <Button url={returnURL(gameId)} text={"learn more"} toPage={true}></Button>
                   }
                 </div>
               </li>
