@@ -14,7 +14,7 @@ module.exports = {
         }
       },
 			fontFamily: {
-				'orbi': ['Orbitron', 'Helvetica', 'Arial', 'sans-serif'],
+				'libre': ['Libre Baskerville', 'Times New Roman', 'Times', 'serif'],
 				'cond': ['Roboto Condensed', 'Helvetica', 'Arial', 'sans-serif'],
 				'main': ['Roboto', 'Helvetica', 'Arial', 'sans-serif'],
 			},
