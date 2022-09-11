@@ -31,7 +31,7 @@ export default function App() {
             {getGamesApi.data && 
               getGamesApi.data.map((game, idx)=> (
                 <Route
-                  key={idx + getGamesApi.gameDetailPages.gameId}
+                  key={getGamesApi.gameDetailPages.gameId}
                   exact 
                   path={getGamesApi.gameDetailPages[idx].url} 
                   element={<GameDetails

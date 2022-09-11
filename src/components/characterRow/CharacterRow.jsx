@@ -9,6 +9,11 @@ export const CharacterRow = ({gameCharacters}) => {
     setFilteredArray(gameCharacters.filter((character) => character.name.toLowerCase().includes(filterValue.toLowerCase())))
   },[filterValue])
 
+  useEffect(()=>{
+    setFilteredArray(gameCharacters);
+    setfilterValue('');
+  },[gameCharacters])
+
   return (
     <>
       <section>
