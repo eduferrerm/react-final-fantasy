@@ -1,4 +1,4 @@
-import unkownCharacterImage from '../../assets/img/unkown-character.jpeg';
+import unkownCharacterImage from '../../assets/img/general/unkown-character.jpeg';
 import './characterRow.scss'
 
 export const CharacterRowImg = ({src, name}) => (
@@ -12,7 +12,3 @@ export const CharacterRowImg = ({src, name}) => (
       alt={`An image of ${name}`} />
   </div>
 )
-  
-  
-
-
