@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { GameContext } from "../context/GameContext";
 
 import { Hero } from "../components/hero/Hero";
@@ -10,6 +10,10 @@ import { CONTENT } from "../content/home";
 
 export const Home = () => {
   const { getGamesApi } = useContext(GameContext);
+  
+  useEffect(()=>{
+    document.title = `My Fav FF Games | Home`;
+  },[])
   
   return (
     <>

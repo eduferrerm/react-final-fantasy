@@ -11,33 +11,38 @@ export const GameRow = ({selectedGames, isDetailPage}) => {
   const { getGamesApi } = useContext(GameContext);
   
   const returnNewImage = (currentIterationID, defaultImg) => {
+    let img;
+
     switch(currentIterationID) {
       case getGamesApi.gameDetailPages[0].gameId:
-        return ff3Image;
+        img = ff3Image;
         break;
       case getGamesApi.gameDetailPages[1].gameId:
-        return ff7Image;
+        img = ff7Image;
         break;
       case getGamesApi.gameDetailPages[2].gameId:
-        return ff15Image;
+        img = ff15Image;
         break;
       default:
         return defaultImg;
     }
+    return img;
   };
 
   const returnURL = (currentIterationID) => {
+    let url;
     switch(currentIterationID) {
       case getGamesApi.gameDetailPages[0].gameId:
-        return getGamesApi.gameDetailPages[0].url;
+        url = getGamesApi.gameDetailPages[0].url;
         break;
       case getGamesApi.gameDetailPages[1].gameId:
-        return getGamesApi.gameDetailPages[1].url;
+        url = getGamesApi.gameDetailPages[1].url;
         break;
       case getGamesApi.gameDetailPages[2].gameId:
-        return getGamesApi.gameDetailPages[2].url;
+        url = getGamesApi.gameDetailPages[2].url;
         break;
     }
+    return url;
   };
 
   return (
