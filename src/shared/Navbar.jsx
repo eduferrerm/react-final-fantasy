@@ -62,15 +62,14 @@ export const Navbar = ()=> {
           justify-center items-center
           fixed top-0 right-0 lg:relative 
           h-screen lg:h-auto 
-          w-full lg:w-auto 
+          w-10/12 lg:w-auto 
           bg-gray-900
           lg:bg-transparent
-          bg-opacity-95
           ml-auto z-20`}
         >
           {
             getGamesApi.gameDetailPages.map(({url, navTitle})=> (
-             <li className="text-teal-400 underline text-2xl lg:text-base mb-8 lg:mb-0 mx-4 flex justify-between items-center" key={`${url}${navTitle}`}>
+             <li className="font-cond text-teal-400 underline text-2xl lg:text-2xl mb-8 lg:mb-0 mx-4 flex justify-between items-center font-bold p-4" key={`${url}${navTitle}`}>
                 <Link to={url} onClick={() => setMenuIsHidden(true)}>
                   {navTitle}
                 </Link>

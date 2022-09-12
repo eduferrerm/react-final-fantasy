@@ -31,9 +31,9 @@ export const BuyGame = ({buyGameData, selectedIndex}) => {
             <span>
               <img className="w-60 sm:w-72" src={gameCoverImages[selectedIndex]} alt="" />
             </span>
-            <span className="flex sm:flex-col justify-center items-center mb-8 pl-8">
-              <h4 className="font-cond text-3xl sm:mb-8 text-center sm:text-left">Starting at: ${buyGameData[selectedIndex].price}</h4>
-              <ExternalButton url={buyGameData[selectedIndex].urlAmazon} icon={logoAmazon} text={'Buy the game'} />
+            <span className="flex sm:flex-col justify-center items-center mb-8 sm:pl-8">
+              <h4 className="font-cond text-3xl sm:mb-8 text-center w-1/2 sm:text-center">Starting at: <span className="text-teal-400">${buyGameData[selectedIndex].price}</span></h4>
+              <ExternalButton url={buyGameData[selectedIndex].urlAmazon} icon={logoAmazon} text={'Buy the game'} additionalClasses={'w-/12 sm:w-auto'}/>
             </span>
           </div>
         </div>

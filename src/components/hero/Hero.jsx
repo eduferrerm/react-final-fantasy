@@ -36,12 +36,12 @@ export const Hero = () => {
         className='fixed top-0 left-0 w-full object-cover'
         autoPlay muted loop playsInline poster={videoPoster} src={returnMobileOrDeskVideo()}
       />
-      <div className="relative z-30 w-full max-w-3/4 h-full flex flex-col justify-center sm:items-center mx-auto">
+      <div className="relative z-30 w-full max-w-11/12 h-full flex flex-col justify-center sm:items-center mx-auto">
         <div>
           <h1>
               <img className='w-full' src={brand} alt="EEKFM Web Design & Development" />
           </h1>
-          <h2 className='text-teal-500'>My Favourite Final Fantasy Games</h2>
+          <h2 className='text-teal-200 font-cond uppercase text-xl font-bold mt-4'>My Favourite Final Fantasy Games</h2>
         </div>
       </div>
       <img className="hero-texture" src={heroTexture} alt="" />
