@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { GameContext } from "../../context/GameContext";
 import { Button } from "../ui/button/Button";
-import ff3Image from '../../assets/img/ff-3/ff-3-game-img-1.jpeg';
+import ff3Image from '../../assets/img/ff-3/ff-3-game-img-2.jpg';
 import ff7Image from '../../assets/img/ff-7/ff-7-game-img-1.jpeg';
 import ff15Image from '../../assets/img/ff-15/ff-15-game-img-1.jpeg';
 import './gameRow.scss';
@@ -47,7 +47,7 @@ export const GameRow = ({selectedGames, isDetailPage}) => {
   return (
     <section className="bg-slate-800 w-full relative z-10">
       
-        <ul className="game-row flex flex-col md:flex-row mx-auto max-w-screen-xl">
+        <ul className={`${!isDetailPage ? 'px-4' : ''} game-row flex flex-col md:flex-row mx-auto max-w-screen-xl`}>
           {
             selectedGames.map(({ gameId, picture, title, releaseDate, platform, description }) => (
               <li 
